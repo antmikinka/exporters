@@ -553,7 +553,7 @@ def export_pytorch(
     mlmodel = ct.convert(
         traced_model,
         inputs=input_tensors,
-        convert_to="neuralnetwork" if config.use_legacy_format else "mlprogram",
+        convert_to="neuralnetwork" if config.use_legacy_format else "mlprogram", #could remove make it use legacy format if config.use_legacy_format else "mlprogram"
         compute_units=compute_units,
         **convert_kwargs,
     )
