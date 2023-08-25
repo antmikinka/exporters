@@ -1,0 +1,26 @@
+(huggingfaceexporters) C:\Users\antmi\exporters>python -m exporters.coreml -m=tiiuae/falcon-40b-instruct \ --feature=text-generation-with-past --quantize=float16 --use_past
+Downloading (…)okenizer_config.json: 100%|█████████████████████████████████████████████| 220/220 [00:00<00:00, 220kB/s]
+Downloading (…)lve/main/config.json: 100%|████████████████████████████████████████████████████| 658/658 [00:00<?, ?B/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "c:\users\antmi\exporters\src\exporters\coreml\__main__.py", line 178, in <module>
+    main()
+  File "c:\users\antmi\exporters\src\exporters\coreml\__main__.py", line 120, in main
+    preprocessor = get_preprocessor(args.model)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\onnx\utils.py", line 88, in get_preprocessor
+    return AutoProcessor.from_pretrained(model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\auto\processing_auto.py", line 244, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\auto\configuration_auto.py", line 986, in from_pretrained
+    trust_remote_code = resolve_trust_remote_code(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\dynamic_module_utils.py", line 535, in resolve_trust_remote_code
+    signal.signal(signal.SIGALRM, _raise_timeout_error)
+                  ^^^^^^^^^^^^^^
+AttributeError: module 'signal' has no attribute 'SIGALRM'. Did you mean: 'SIGABRT'?
+
+(huggingfaceexporters) C:\Users\antmi\exporters>

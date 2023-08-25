@@ -1,0 +1,207 @@
+(huggingfaceexporters) C:\Users\antmi>python -m exporters.coreml -m=ehartford/dolphin-llama2-7b \ --feature=text-generation --quantize=float16 --use_past --preprocessor=tokenizer
+Torch version 2.0.1+cu118 has not been tested with coremltools. You may run into unexpected errors. Torch 2.0.0 is the most recent version that has been tested.
+This is a debug message.
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:15<00:00,  7.54s/it]
+Using framework PyTorch: 2.0.1+cu118
+Overriding 1 configuration item(s)
+        - use_cache -> True
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\llama\modeling_llama.py:579: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if input_shape[-1] > 1:
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\llama\modeling_llama.py:55: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if past_key_values_length > 0:
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\llama\modeling_llama.py:119: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if seq_len > self.max_seq_len_cached:
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\llama\modeling_llama.py:332: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if attn_weights.size() != (bsz, self.num_heads, q_len, kv_seq_len):
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\llama\modeling_llama.py:339: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if attention_mask.size() != (bsz, 1, q_len, kv_seq_len):
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\llama\modeling_llama.py:349: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if attn_output.size() != (bsz, self.num_heads, q_len, self.head_dim):
+this is the input_desc: OrderedDict([('input_ids', InputDescription(name='input_ids', description='Indices of input sequence tokens in the vocabulary', is_optional=False, sequence_length=128, color_layout=None)), ('attention_mask', InputDescription(name='attention_mask', description='Mask to avoid performing attention on padding token indices (1 = not masked, 0 = masked)', is_optional=False, sequence_length=None, color_layout=None)), ('past_key_values_0_key', InputDescription(name='past_key_values_0_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_0_value', InputDescription(name='past_key_values_0_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_1_key', InputDescription(name='past_key_values_1_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_1_value', InputDescription(name='past_key_values_1_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_2_key', InputDescription(name='past_key_values_2_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_2_value', InputDescription(name='past_key_values_2_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_3_key', InputDescription(name='past_key_values_3_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_3_value', InputDescription(name='past_key_values_3_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_4_key', InputDescription(name='past_key_values_4_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_4_value', InputDescription(name='past_key_values_4_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_5_key', InputDescription(name='past_key_values_5_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_5_value', InputDescription(name='past_key_values_5_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_6_key', InputDescription(name='past_key_values_6_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_6_value', InputDescription(name='past_key_values_6_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_7_key', InputDescription(name='past_key_values_7_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_7_value', InputDescription(name='past_key_values_7_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_8_key', InputDescription(name='past_key_values_8_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_8_value', InputDescription(name='past_key_values_8_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_9_key', InputDescription(name='past_key_values_9_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_9_value', InputDescription(name='past_key_values_9_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_10_key', InputDescription(name='past_key_values_10_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_10_value', InputDescription(name='past_key_values_10_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_11_key', InputDescription(name='past_key_values_11_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_11_value', InputDescription(name='past_key_values_11_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_12_key', InputDescription(name='past_key_values_12_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_12_value', InputDescription(name='past_key_values_12_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_13_key', InputDescription(name='past_key_values_13_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_13_value', InputDescription(name='past_key_values_13_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_14_key', InputDescription(name='past_key_values_14_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_14_value', InputDescription(name='past_key_values_14_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_15_key', InputDescription(name='past_key_values_15_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_15_value', InputDescription(name='past_key_values_15_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_16_key', InputDescription(name='past_key_values_16_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_16_value', InputDescription(name='past_key_values_16_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_17_key', InputDescription(name='past_key_values_17_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_17_value', InputDescription(name='past_key_values_17_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_18_key', InputDescription(name='past_key_values_18_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_18_value', InputDescription(name='past_key_values_18_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_19_key', InputDescription(name='past_key_values_19_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_19_value', InputDescription(name='past_key_values_19_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_20_key', InputDescription(name='past_key_values_20_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_20_value', InputDescription(name='past_key_values_20_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_21_key', InputDescription(name='past_key_values_21_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_21_value', InputDescription(name='past_key_values_21_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_22_key', InputDescription(name='past_key_values_22_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_22_value', InputDescription(name='past_key_values_22_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_23_key', InputDescription(name='past_key_values_23_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_23_value', InputDescription(name='past_key_values_23_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_24_key', InputDescription(name='past_key_values_24_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_24_value', InputDescription(name='past_key_values_24_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_25_key', InputDescription(name='past_key_values_25_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_25_value', InputDescription(name='past_key_values_25_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_26_key', InputDescription(name='past_key_values_26_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_26_value', InputDescription(name='past_key_values_26_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_27_key', InputDescription(name='past_key_values_27_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_27_value', InputDescription(name='past_key_values_27_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_28_key', InputDescription(name='past_key_values_28_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_28_value', InputDescription(name='past_key_values_28_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_29_key', InputDescription(name='past_key_values_29_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_29_value', InputDescription(name='past_key_values_29_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_30_key', InputDescription(name='past_key_values_30_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_30_value', InputDescription(name='past_key_values_30_value', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_31_key', InputDescription(name='past_key_values_31_key', description='', is_optional=True, sequence_length=None, color_layout=None)), ('past_key_values_31_value', InputDescription(name='past_key_values_31_value', description='', is_optional=True, sequence_length=None, color_layout=None))])
+Skipping token_type_ids input
+this is shape list [1, 32, 130, 128]
+this is shape[2] RangeDim(lower_bound=0, upper_bound=-1, default=0, symbol="is1")
+this is shape after ct.shape (1, 32, RangeDim(lower_bound=0, upper_bound=-1, default=0, symbol="is1"), 128)
+Tuple detected at graph output. This will be flattened in the converted model.
+Converting PyTorch Frontend ==> MIL Ops:   0%|                                                                                                                                                                   | 0/4086 [00:00<?, ? ops/s]Core ML embedding (gather) layer does not support any inputs besides the weights and indices. Those given will be ignored.
+Converting PyTorch Frontend ==> MIL Ops: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉| 4084/4086 [00:05<00:00, 726.16 ops/s]
+Running MIL frontend_pytorch pipeline: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5/5 [00:00<00:00,  6.09 passes/s]
+Running MIL default pipeline:  15%|█████████████████████████▏                                                                                                                                          | 10/65 [00:03<00:12,  4.28 passes/s]C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.11', of the source model, has been renamed to 'hidden_states_11' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.13', of the source model, has been renamed to 'hidden_states_13' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.37', of the source model, has been renamed to 'hidden_states_37' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.39', of the source model, has been renamed to 'hidden_states_39' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.63', of the source model, has been renamed to 'hidden_states_63' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.65', of the source model, has been renamed to 'hidden_states_65' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.89', of the source model, has been renamed to 'hidden_states_89' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.91', of the source model, has been renamed to 'hidden_states_91' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.115', of the source model, has been renamed to 'hidden_states_115' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.117', of the source model, has been renamed to 'hidden_states_117' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.141', of the source model, has been renamed to 'hidden_states_141' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.143', of the source model, has been renamed to 'hidden_states_143' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.167', of the source model, has been renamed to 'hidden_states_167' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.169', of the source model, has been renamed to 'hidden_states_169' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.193', of the source model, has been renamed to 'hidden_states_193' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.195', of the source model, has been renamed to 'hidden_states_195' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.219', of the source model, has been renamed to 'hidden_states_219' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.221', of the source model, has been renamed to 'hidden_states_221' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.245', of the source model, has been renamed to 'hidden_states_245' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.247', of the source model, has been renamed to 'hidden_states_247' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.271', of the source model, has been renamed to 'hidden_states_271' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.273', of the source model, has been renamed to 'hidden_states_273' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.297', of the source model, has been renamed to 'hidden_states_297' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.299', of the source model, has been renamed to 'hidden_states_299' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.323', of the source model, has been renamed to 'hidden_states_323' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.325', of the source model, has been renamed to 'hidden_states_325' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.349', of the source model, has been renamed to 'hidden_states_349' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.351', of the source model, has been renamed to 'hidden_states_351' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.375', of the source model, has been renamed to 'hidden_states_375' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.377', of the source model, has been renamed to 'hidden_states_377' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.401', of the source model, has been renamed to 'hidden_states_401' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.403', of the source model, has been renamed to 'hidden_states_403' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.427', of the source model, has been renamed to 'hidden_states_427' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.429', of the source model, has been renamed to 'hidden_states_429' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.453', of the source model, has been renamed to 'hidden_states_453' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.455', of the source model, has been renamed to 'hidden_states_455' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.479', of the source model, has been renamed to 'hidden_states_479' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.481', of the source model, has been renamed to 'hidden_states_481' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.505', of the source model, has been renamed to 'hidden_states_505' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.507', of the source model, has been renamed to 'hidden_states_507' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.531', of the source model, has been renamed to 'hidden_states_531' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.533', of the source model, has been renamed to 'hidden_states_533' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.557', of the source model, has been renamed to 'hidden_states_557' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.559', of the source model, has been renamed to 'hidden_states_559' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.583', of the source model, has been renamed to 'hidden_states_583' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.585', of the source model, has been renamed to 'hidden_states_585' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.609', of the source model, has been renamed to 'hidden_states_609' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.611', of the source model, has been renamed to 'hidden_states_611' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.635', of the source model, has been renamed to 'hidden_states_635' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.637', of the source model, has been renamed to 'hidden_states_637' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.661', of the source model, has been renamed to 'hidden_states_661' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.663', of the source model, has been renamed to 'hidden_states_663' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.687', of the source model, has been renamed to 'hidden_states_687' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.689', of the source model, has been renamed to 'hidden_states_689' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.713', of the source model, has been renamed to 'hidden_states_713' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.715', of the source model, has been renamed to 'hidden_states_715' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.739', of the source model, has been renamed to 'hidden_states_739' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.741', of the source model, has been renamed to 'hidden_states_741' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.765', of the source model, has been renamed to 'hidden_states_765' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.767', of the source model, has been renamed to 'hidden_states_767' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.791', of the source model, has been renamed to 'hidden_states_791' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.793', of the source model, has been renamed to 'hidden_states_793' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.817', of the source model, has been renamed to 'hidden_states_817' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, 'hidden_states.819', of the source model, has been renamed to 'hidden_states_819' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\mil\passes\defs\preprocess.py:267: UserWarning: Output, '5245', of the source model, has been renamed to 'var_5245' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+Running MIL default pipeline: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 65/65 [05:22<00:00,  4.96s/ passes]
+Running MIL backend_neuralnetwork pipeline: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:08<00:00,  1.05 passes/s]
+Translating MIL ==> NeuralNetwork Ops:  54%|█████████████████████████████████████████████████████████████████████████████████▍                                                                    | 2467/4547 [1:16:40<1:04:38,  1.86s/ ops]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "c:\users\antmi\exporters\src\exporters\coreml\__main__.py", line 197, in <module>
+    main()
+  File "c:\users\antmi\exporters\src\exporters\coreml\__main__.py", line 167, in main
+    convert_model(
+  File "c:\users\antmi\exporters\src\exporters\coreml\__main__.py", line 46, in convert_model
+    mlmodel = export(
+              ^^^^^^^
+  File "c:\users\antmi\exporters\src\exporters\coreml\convert.py", line 666, in export
+    return export_pytorch(preprocessor, model, config, quantize, compute_units)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\antmi\exporters\src\exporters\coreml\convert.py", line 559, in export_pytorch
+    mlmodel = ct.convert(
+              ^^^^^^^^^^^
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\_converters_entry.py", line 551, in convert
+    mlmodel = mil_convert(
+              ^^^^^^^^^^^^
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\converter.py", line 188, in mil_convert
+    return _mil_convert(model, convert_from, convert_to, ConverterRegistry, MLModel, compute_units, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\converter.py", line 212, in _mil_convert
+    proto, mil_program = mil_convert_to_proto(
+                         ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\converter.py", line 304, in mil_convert_to_proto
+    out = backend_converter(prog, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\converter.py", line 119, in __call__
+    return load(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\backend\nn\load.py", line 260, in load
+    convert_ops(
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\backend\nn\op_mapping.py", line 49, in convert_ops
+    mapper(const_context, builder, op)
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\mil\backend\nn\op_mapping.py", line 1609, in linear
+    builder.add_inner_product(
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\models\neural_network\builder.py", line 1555, in add_inner_product
+    weights.floatValue.extend(W.flatten())
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\google\protobuf\internal\containers.py", line 173, in extend
+    new_values = [self._type_checker.CheckValue(elem) for elem in elem_seq_iter]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\google\protobuf\internal\containers.py", line 173, in <listcomp>
+    new_values = [self._type_checker.CheckValue(elem) for elem in elem_seq_iter]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+MemoryError

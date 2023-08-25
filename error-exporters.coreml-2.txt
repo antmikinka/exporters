@@ -1,0 +1,40 @@
+huggingfaceexporters) C:\Users\antmi\exporters>python -m exporters.coreml -m=ehartford/dolphin-llama2-7b \ --feature=text-generation --quantize=float16 --use_past
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 2/2 [01:45<00:00, 52.86s/it]
+Using framework PyTorch: 2.0.0+cpu
+Overriding 1 configuration item(s)
+        - use_cache -> True
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\llama\modeling_llama.py:579: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if input_shape[-1] > 1:
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\llama\modeling_llama.py:55: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if past_key_values_length > 0:
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\llama\modeling_llama.py:119: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if seq_len > self.max_seq_len_cached:
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\llama\modeling_llama.py:332: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if attn_weights.size() != (bsz, self.num_heads, q_len, kv_seq_len):
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\llama\modeling_llama.py:339: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if attention_mask.size() != (bsz, 1, q_len, kv_seq_len):
+C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\transformers\models\llama\modeling_llama.py:349: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if attn_output.size() != (bsz, self.num_heads, q_len, self.head_dim):
+Skipping token_type_ids input
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "c:\users\antmi\exporters\src\exporters\coreml\__main__.py", line 178, in <module>
+    main()
+  File "c:\users\antmi\exporters\src\exporters\coreml\__main__.py", line 166, in main
+    convert_model(
+  File "c:\users\antmi\exporters\src\exporters\coreml\__main__.py", line 45, in convert_model
+    mlmodel = export(
+              ^^^^^^^
+  File "c:\users\antmi\exporters\src\exporters\coreml\convert.py", line 660, in export
+    return export_pytorch(preprocessor, model, config, quantize, compute_units)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\antmi\exporters\src\exporters\coreml\convert.py", line 553, in export_pytorch
+    mlmodel = ct.convert(
+              ^^^^^^^^^^^
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\_converters_entry.py", line 496, in convert
+    _validate_conversion_arguments(
+  File "C:\Users\antmi\anaconda3\envs\huggingfaceexporters\Lib\site-packages\coremltools\converters\_converters_entry.py", line 750, in _validate_conversion_arguments
+    raise ValueError(err_msg_infinite_bound)
+ValueError: For mlprogram, inputs with infinite upper_bound is not allowed. Please set upper_bound to a positive value in "RangeDim()" for the "inputs" param in ct.convert().
+ 
