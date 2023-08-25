@@ -1,0 +1,82 @@
+making in config.py
+def infer_sequence_length_from_config(self) -> bool:
+        """When True, will use the max sequence length from the model configuration."""
+        return True
+@property
+    @profile
+    def use_flexible_shapes(self) -> bool:
+        """
+        When True, inputs are allowed to use sequence lengths of `1` up to `maxSequenceLength`.
+        Unfortunately, this currently prevents the model from running on GPU or the Neural Engine.
+        We default to `False`, but this can be overridden in custom configurations.
+        """
+        return True
+
+ @property
+    @profile
+    def use_legacy_format(self) -> bool:
+        """
+        If `True`, the converter will produce a model in the older NeuralNetwork format.
+        By default, the ML Program format will be used.
+        """
+        return False
+
+to conda install matplotlib
+package                    |            build
+    ---------------------------|-----------------
+    krb5-1.20.1                |       h5b6d351_1         786 KB
+    libpq-12.15                |       hb652d5d_1         3.2 MB
+    libxml2-2.10.4             |       h0ad7f3c_1         2.8 MB
+    libxslt-1.1.37             |       h2bbff1b_1         447 KB
+    mkl-2023.1.0               |   h6b88ed4_46357       155.6 MB
+    numpy-1.25.2               |  py311hdab7c0b_0          13 KB
+    numpy-base-1.25.2          |  py311hd01c5d8_0         7.3 MB
+    qt-main-5.15.2             |       h6072711_9        59.4 MB
+    qt-webengine-5.15.9        |       h5bd16bc_7        58.1 MB
+    tornado-6.3.2              |  py311h2bbff1b_0         867 KB
+    ------------------------------------------------------------
+                                           Total:       288.5 MB
+
+(huggingfaceexporters) C:\Users\antmi\exporters>conda install matplotlib
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 23.5.2
+  latest version: 23.7.3
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+Or to minimize the number of packages updated during conda update use
+
+     conda install conda=23.7.3
+
+
+
+## Package Plan ##
+
+  environment location: C:\Users\antmi\anaconda3\envs\huggingfaceexporters
+
+  added / updated specs:
+    - matplotlib
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    krb5-1.20.1                |       h5b6d351_1         786 KB
+    libpq-12.15                |       hb652d5d_1         3.2 MB
+    libxml2-2.10.4             |       h0ad7f3c_1         2.8 MB
+    libxslt-1.1.37             |       h2bbff1b_1         447 KB
+    mkl-2023.1.0               |   h6b88ed4_46357       155.6 MB
+    numpy-1.25.2               |  py311hdab7c0b_0          13 KB
+    numpy-base-1.25.2          |  py311hd01c5d8_0         7.3 MB
+    qt-main-5.15.2             |       h6072711_9        59.4 MB
+    qt-webengine-5.15.9        |       h5bd16bc_7        58.1 MB
+    tornado-6.3.2              |  py311h2bbff1b_0         867 KB
+    ------------------------------------------------------------
+                                           Total:       288.5 MB

@@ -1,0 +1,8 @@
+CMDLINE python -m exporters.coreml -m=meta-llama/Llama-2-7b-chat-hf \ --feature=text-generation --quantize=float16 --use_past --preprocessor=tokenizer --framework=pt
+MEM 1.597656 1692991068.0226
+MEM 17.558594 1692991068.1325
+MEM 28.695312 1692991068.2406
+MEM 34.777344 1692991068.3504
+MEM 39.820312 1692991068.4587
+MEM 42.617188 1692991068.5668
+MEM 46.085938 1692991068.6746
